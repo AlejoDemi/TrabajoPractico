@@ -7,6 +7,7 @@ public class Brote {
     ArrayList<String>brote;
 
     public Brote() {
+        brotePosible="";
         brote=new ArrayList<>();
     }
 
@@ -55,13 +56,13 @@ public class Brote {
                     String[]cuilContactos=contactos.get(j).split("/",3);
                     if (brotePosible.equals(cuilContactos[0])){
                         if (cuilContactos[1].equals(cuilPositivos[0])){
-                            if(!addIfPossible(cuilContactos[1])){
+                            if(!canIadd(cuilContactos[1])){
                                 brote.add(cuilContactos[1]);
                             }
                         }
                     }else if(brotePosible.equals(cuilContactos[1])){
                         if (cuilContactos[0].equals(cuilPositivos[0])){
-                            if(!addIfPossible(cuilContactos[0])){
+                            if(!canIadd(cuilContactos[0])){
                                 brote.add(cuilContactos[1]);
                             }
                         }
@@ -70,7 +71,7 @@ public class Brote {
             }
         }
 
-    public boolean addIfPossible(String cuil){
+    public boolean canIadd(String cuil){
         for (int i = 0; i < brote.size(); i++) {
             if (brote.get(i).equals(cuil)){
                 return true;

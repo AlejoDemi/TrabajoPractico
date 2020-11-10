@@ -2,6 +2,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class TraceIt {
+
     public static void main(String[] args) {
         Pantalla pantalla=new Pantalla();
         pantalla.clean();
